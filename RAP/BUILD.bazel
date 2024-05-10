@@ -1,0 +1,14 @@
+# Copyright (c) 2024 Cris Bai
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+cc_library(
+    name = "RAP",
+    hdrs = [
+        "algorithm_handle.h",
+        "data_handle.h",
+        "dll_defines.h",
+    ],
+    visibility = ["//visibility:public"],
+)
