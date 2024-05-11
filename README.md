@@ -16,7 +16,7 @@ RAP(pronounced as [wrap] 🙂) is a virtual interface for all kinds of algorithm
 
 ## Code
 
-RAP only provide a C/C++ header file which contains definition of the pure virtual class of `DataHandle` and `AlgorithmBase`.
+RAP only provide a C/C++ header file which contains definition of the pure virtual class of `DataHandle` and `TaskBase`.
 
 `MockAlgo` is a sample code for algo that follows the RAP rule.
 
@@ -26,8 +26,8 @@ RAP only provide a C/C++ header file which contains definition of the pure virtu
 
 ### From algorithm developing side
 
-- All the algorithms should be derived from the class `AlgorithmBase` and implement all the interface it declare.
-- Algorithm library should provide a 'C-style' function `AlgorithmBase* CreateAlgorithm()` to let user create an algorithm handle. And also should provide a destroy function `DestroyAlgorithm(AlgorithmBase*)` to clean the resource.
+- All the algorithms should be derived from the class `TaskBase` and implement all the interface it declare.
+- Algorithm library should provide a 'C-style' function `TaskBase* CreateAlgorithm()` to let user create an algorithm handle. And also should provide a destroy function `DestroyAlgorithm(TaskBase*)` to clean the resource.
 - All the data exported to user should be wrapped as a class derived from `DataHandle`. User can access and modify the data by the member function of the `DataHandle`.
 
 ### From driver developing side

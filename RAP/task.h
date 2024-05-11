@@ -7,17 +7,21 @@
 #define RAP_ALGORITHM_HANDLE_H_
 
 #include "RAP/data_handle.h"
+#include "RAP/interface_handle.h"
 
-class DLL_PORTING AlgorithmBase {
+namespace rap {
+
+class DLL_PORTING TaskBase {
  public:
-  virtual DataHandle *GetDataHandle(const char *) = 0;
+  virtual InterfaceHandle *GetInterfaceHandle() = 0;
   virtual int Open() = 0;
   virtual int Run() = 0;
   virtual int Close() = 0;
-  virtual ~AlgorithmBase(){};
+  virtual ~TaskBase(){};
 };
 
-typedef AlgorithmBase *fn_create();
-typedef AlgorithmBase *fn_create_by_name(const char *);
-typedef int fn_destroy(AlgorithmBase *);
+typedef TaskBase *fn_create();
+typedef TaskBase *fn_create_by_name(const char *);
+typedef int fn_destroy(TaskBase *);
+}  // namespace rap
 #endif
